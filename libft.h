@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <fcntl.h>
+# include <string.h>
 
 typedef struct s_list
 {
@@ -23,6 +26,28 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
+
+// Fonctions get_netx_line
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *str);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*get_next_line(int fd);
+
+// Fonctions printf
+int		ft_putlchar(char c);
+int		ft_putlstr(const char *s);
+int		ft_putnbr(int n);
+int		ft_putnbr_hex(char c, unsigned long nb);
+int		ft_putnbr_u(unsigned int n);
+int		ft_ptr(void *adress);
+int		ft_printf(const char *format, ...);
+
+// Fonctions libft
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
